@@ -1,7 +1,7 @@
 ## Real-time Monte Carlo Denoising with the Neural Bilateral Grid
 Open source of our EGSR 2020 paper "Real-time Monte Carlo Denoising with the Neural Bilateral Grid"
 
-![prediction example](TeaserImage_1280x640.png)
+![prediction example](TeaserImages_1280x640.png)
 
 ### Introduction
 This work is based on our 
