@@ -190,7 +190,7 @@ if __name__ == "__main__":
 				train_psnr_epoch_mean.append(epoch_avg_psnr_train)
 				train_loss_epoch_mean.append(epoch_avg_loss_train)
 
-				print('S1, Epoch %d Train\n, psnr %.8f\nloss = %.8f'% (
+				print('Epoch %d Train\n, psnr %.8f\nloss = %.8f'% (
 					epoch_i, epoch_avg_psnr_train, epoch_avg_loss_train))
 				break
 		# Validate
