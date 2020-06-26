@@ -225,9 +225,9 @@ if __name__ == "__main__":
 						for k in range(tgt.shape[0]):
 							save_image(tgt[k, :, :, :],
 								os.path.join(result_dir, 'e%d_b%d_i%d_tgt.png'%(epoch_i, batch_cnt, k)), 'RGB')
-							save_image_pil(denoised[k, :, :, :],
+							save_image(denoised[k, :, :, :],
 								os.path.join(result_dir, 'e%d_b%d_i%d_rcn.png'%(epoch_i, batch_cnt, k)), 'RGB')
-							save_image_pil(tone_mapping(src_hdr[k,:,:,0:3]),
+							save_image(tone_mapping(src_hdr[k,:,:,0:3]),
 								os.path.join(result_dir, 'e%d_b%d_i%d_src.png'%(epoch_i, batch_cnt, k)), 'RGB')
 
 							if args.export_grid_output:
@@ -261,7 +261,7 @@ if __name__ == "__main__":
 						epoch_i, epoch_avg_psnr_valid, epoch_avg_loss_valid))
 					if epoch_avg_loss_valid < min_loss:
 						print("best model saved")
-						saver.save(sess, os.path.join(stg1_model_dir, 'best_model'))
+						saver.save(sess, os.path.join(model_dir, 'best_model'))
 						min_loss = epoch_avg_loss_valid
 					break			 
 		# Validate epoch finished.
