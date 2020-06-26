@@ -3,17 +3,17 @@ Open source of our EGSR 2020 paper "Real-time Monte Carlo Denoising with the Neu
 
 ![prediction example](TeaserImages_1280x640.png)
 
-**Paper**: https://drive.google.com/file/d/1Dc-j-8G6-mJ3wgjkifrTsjRcxOBnqiaa/view?usp=sharing
+[**Paper**](https://drive.google.com/file/d/1Dc-j-8G6-mJ3wgjkifrTsjRcxOBnqiaa/view?usp=sharing)
 
-**Website**: https://sites.google.com/view/bilateral-grid-denoising
+[**Website**](https://sites.google.com/view/bilateral-grid-denoising)
 
-**Online Result Viewer**: https://sites.google.com/view/bilateral-grid-denoising/onlineresultviewer
+[**Online Result Viewer**](https://sites.google.com/view/bilateral-grid-denoising/onlineresultviewer)
 
-**Supplementary Material**: https://drive.google.com/file/d/1ck65mW_SJvdrwohiWKFbWUhhgZjHei5k/view?usp=sharing
+[**Supplementary Material**](https://drive.google.com/file/d/1ck65mW_SJvdrwohiWKFbWUhhgZjHei5k/view?usp=sharing)
 
-**Supplementary Video**: https://youtu.be/9PVR1-GTt6g
+[**Supplementary Video**](https://youtu.be/9PVR1-GTt6g)
 
-**Full Talk Video**: https://youtu.be/v633eSb6ygY
+[**Full Talk Video**](https://youtu.be/v633eSb6ygY)
 
 ### Introduction
 Real-time denoising for Monte Carlo rendering remains a critical challenge with regard to the demanding requirements of both high fidelity and low computation time. In this paper, we propose a novel and practical deep learning approach to robustly denoise Monte Carlo images rendered at sampling rates as low as a single sample per pixel (1-spp). This causes severe noise, and previous techniques strongly compromise final quality to maintain real-time denoising speed. We develop an efficient convolutional neural network architecture to learn to denoise noisy inputs in a data-dependent, bilateral space. Our neural network learns to generate a guide image for first splatting noisy data into the grid, and then slicing it to read out the denoised data. To seamlessly integrate bilateral grids into our trainable denoising pipeline, we leverage a differentiable bilateral grid, called neural bilateral grid, which enables end-to-end training. In addition, we also show how we can further improve denoising quality using a hierarchy of multi-scale bilateral grids. Our experimental results demonstrate that this approach can robustly denoise 1-spp noisy input images at real-time frame rates (a few milliseconds per frame). At such low sampling rates, our approach outperforms state-of-the-art techniques based on kernel prediction networks both in terms of quality and speed, and it leads to significantly improved quality compared to the state-of-the-art feature regression technique.
