@@ -10,7 +10,6 @@ import time
 import argparse
 import numpy as np
 import tensorflow as tf
-from image_utils import *
 from tensorflow.python.client import timeline
 
 from data_loader import dataLoader
