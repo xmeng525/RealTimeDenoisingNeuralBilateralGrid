@@ -14,7 +14,7 @@ from tensorflow.python.client import timeline
 
 from data_loader import dataLoader
 from network import DenoiserGuideNet
-from image_utils import save_image
+from image_utils import save_image, batch_psnr
 
 INPUT_CHANNEL = 10
 TARGET_CHANNEL = 3
