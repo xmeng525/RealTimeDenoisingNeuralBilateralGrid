@@ -22,17 +22,47 @@ If you find our work useful in your research, please consider citing:
   publisher = {The Eurographics Association},
   }
 
-### Installation
-1. Install tensorflow == 1.13.1.
-2. Clone this repo, and we'll call the directory ${MCDNBG_ROOT}.
-3. TODO
+### Prerequisite Installation
+* Python3
+* TensorFlow 1.13.1
+* Pillow 6.1.0 (or newer)
+* scikit-image 0.16.1 (or newer)
+* OpenEXR 1.3.2 (or newer)
 
-### Pre-trained models
-Download pre-trained models from TODO, and unzip the file to ${MCDNBG_ROOT}/model.
+### Test with the Pre-trained Models
+1. Clone this repo, and we'll call the directory ${MCDNBG_ROOT}.
+2. Download pre-trained models ["classroom"](https://www.dropbox.com/sh/8o7yijfc6rvba16/AADVi0wNoLrRbSgPBIvgcftsa?dl=0) and put the pretrained model to ${MCDNBG_ROOT}/classroom/model.
+3. Download the [1-spp dataset (19GB)](https://etsin.fairdata.fi/dataset/0ab24b68-4658-4259-9f1d-3150be898c63/data) or the [packed testdata for scene "classroom" (1.4GB)](https://www.dropbox.com/sh/8o7yijfc6rvba16/AADVi0wNoLrRbSgPBIvgcftsa?dl=0).
+If you are using 
+4. Recompile the bilateral kernels by running
+```
+cd bilateral_kernels
+./bilateral_kernel.sh
+cd ..
+```
+5. Apply the denoiser by running
+```
+python network_test.py
+```
+   - Input
+     - If you use the [1-spp dataset (19GB)](https://etsin.fairdata.fi/dataset/0ab24b68-4658-4259-9f1d-3150be898c63/data), please change the data-path in the argument list:
+     ```
+     python network_test.py -d ${your-data-path}
+     ```
+     - if you use the [packed testdata for scene "classroom" (1.4GB)](https://www.dropbox.com/sh/8o7yijfc6rvba16/AADVi0wNoLrRbSgPBIvgcftsa?dl=0), please puth the tfrecords file in ${MCDNBG_ROOT}.
+   - There are a few options in the arguments:
+     ```
+     --export_exr ## export the exr file of the 1-spp radiance, denoised image, and ground truth
+     --export_grid_output ## export the images sliced from the 3 bilateral grids with different resolutions
+     --export_guide_weight ## export the guide maps and the weight maps
+     --export_grid ## export the CT-scan of the bilateral grids
+     ```
+6. Evaluate the outputs by running:
+```
+python evaluation.py -d "classroom"
+```
+   - The per-frame PSNR, SSIM, RMSE, SMAPE, and relative-MSE are saved in ${MCDNBG_ROOT}/classroom/result/evaluations
+   - The SSIM errormaps and relative-MSE errormaps are saved in ${MCDNBG_ROOT}/classroom/result/evaluations
 
-### Running the code
-1. Evaluate on the 1-spp BMFR dataset.
-  TODO
-
-2. Evaluate on the 64-spp BMFR dataset.
-  TODO
+### Retrain Your Own Model
+Run "python network_train.py"
