@@ -56,7 +56,7 @@ python network_test.py
      ```
      python network_test.py -d ${your-data-path}
      ```
-     - if you use the [packed testdata for scene "classroom" (1.4GB)](https://www.dropbox.com/s/i8lqh6ezzeymwr9/bw_data_128x128_1scenes_60ips_50ppi_test.tfrecords?dl=0), please puth the tfrecords file in `${MCDNBG_ROOT}`.
+     - if you use the [packed testdata for scene "classroom" (1.4GB)](https://www.dropbox.com/s/i8lqh6ezzeymwr9/bw_data_128x128_1scenes_60ips_50ppi_test.tfrecords?dl=0), please put the tfrecords file in `${MCDNBG_ROOT}`.
    - There are a few options in the arguments:
      ```
      --export_exr ## export the exr file of the 1-spp radiance, denoised image, and ground truth
