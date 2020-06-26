@@ -3,12 +3,19 @@ Open source of our EGSR 2020 paper "Real-time Monte Carlo Denoising with the Neu
 
 ![prediction example](TeaserImages_1280x640.png)
 
-### Introduction
-This work is based on our 
-[EGSR 2020 paper](https://drive.google.com/file/d/1Dc-j-8G6-mJ3wgjkifrTsjRcxOBnqiaa/view?usp=sharing),
-[Supplementary Material](https://drive.google.com/file/d/1ck65mW_SJvdrwohiWKFbWUhhgZjHei5k/view?usp=sharing),
-and [Supplementary Video](https://youtu.be/9PVR1-GTt6g).
+**Paper**: https://drive.google.com/file/d/1Dc-j-8G6-mJ3wgjkifrTsjRcxOBnqiaa/view?usp=sharing
 
+**Website**: https://sites.google.com/view/bilateral-grid-denoising
+
+**Online Result Viewer**: https://sites.google.com/view/bilateral-grid-denoising/onlineresultviewer
+
+**Supplementary Material**: https://drive.google.com/file/d/1ck65mW_SJvdrwohiWKFbWUhhgZjHei5k/view?usp=sharing
+
+**Supplementary Video**: https://youtu.be/9PVR1-GTt6g
+
+**Full Talk Video**: https://youtu.be/v633eSb6ygY
+
+### Introduction
 Real-time denoising for Monte Carlo rendering remains a critical challenge with regard to the demanding requirements of both high fidelity and low computation time. In this paper, we propose a novel and practical deep learning approach to robustly denoise Monte Carlo images rendered at sampling rates as low as a single sample per pixel (1-spp). This causes severe noise, and previous techniques strongly compromise final quality to maintain real-time denoising speed. We develop an efficient convolutional neural network architecture to learn to denoise noisy inputs in a data-dependent, bilateral space. Our neural network learns to generate a guide image for first splatting noisy data into the grid, and then slicing it to read out the denoised data. To seamlessly integrate bilateral grids into our trainable denoising pipeline, we leverage a differentiable bilateral grid, called neural bilateral grid, which enables end-to-end training. In addition, we also show how we can further improve denoising quality using a hierarchy of multi-scale bilateral grids. Our experimental results demonstrate that this approach can robustly denoise 1-spp noisy input images at real-time frame rates (a few milliseconds per frame). At such low sampling rates, our approach outperforms state-of-the-art techniques based on kernel prediction networks both in terms of quality and speed, and it leads to significantly improved quality compared to the state-of-the-art feature regression technique.
 
 ### Citation
@@ -22,17 +29,50 @@ If you find our work useful in your research, please consider citing:
   publisher = {The Eurographics Association},
   }
 
-### Installation
-1. Install tensorflow == 1.13.1.
-2. Clone this repo, and we'll call the directory ${MCDNBG_ROOT}.
-3. TODO
+### Prerequisite Installation
+* Python3
+* TensorFlow 1.13.1
+* Pillow 6.1.0 (or newer)
+* scikit-image 0.16.1 (or newer)
+* OpenEXR 1.3.2 (or newer)
 
-### Pre-trained models
-Download pre-trained models from TODO, and unzip the file to ${MCDNBG_ROOT}/model.
+### Test with the Pre-trained Models
+1. Clone this repo, and we'll call the directory `${MCDNBG_ROOT}`.
+2. Download pre-trained models ["classroom"](https://www.dropbox.com/sh/8o7yijfc6rvba16/AADVi0wNoLrRbSgPBIvgcftsa?dl=0) and put the pretrained model to `${MCDNBG_ROOT}/classroom/model`.
+3. Download the [1-spp dataset (19GB)](https://etsin.fairdata.fi/dataset/0ab24b68-4658-4259-9f1d-3150be898c63/data) or the [packed testdata for scene "classroom" (1.4GB)](https://www.dropbox.com/s/i8lqh6ezzeymwr9/bw_data_128x128_1scenes_60ips_50ppi_test.tfrecords?dl=0).
+If you are using 
+4. Recompile the bilateral kernels by running
+```
+cd bilateral_kernels
+./bilateral_kernel.sh
+cd ..
+```
+5. Apply the denoiser by running
+```
+python network_test.py
+```
+   - Input
+     - If you use the [1-spp dataset (19GB)](https://etsin.fairdata.fi/dataset/0ab24b68-4658-4259-9f1d-3150be898c63/data), please change the data-path in the argument list:
+     ```
+     python network_test.py -d ${your-data-path}
+     ```
+     - if you use the [packed testdata for scene "classroom" (1.4GB)](https://www.dropbox.com/s/i8lqh6ezzeymwr9/bw_data_128x128_1scenes_60ips_50ppi_test.tfrecords?dl=0), please puth the tfrecords file in `${MCDNBG_ROOT}`.
+   - There are a few options in the arguments:
+     ```
+     --export_exr ## export the exr file of the 1-spp radiance, denoised image, and ground truth
+     --export_grid_output ## export the images sliced from the 3 bilateral grids with different resolutions
+     --export_guide_weight ## export the guide maps and the weight maps
+     --export_grid ## export the CT-scan of the bilateral grids
+     ```
+6. Evaluate the outputs by running:
+```
+python evaluation.py -d "classroom"
+```
+   - The per-frame PSNR, SSIM, RMSE, SMAPE, and relative-MSE are saved in `${MCDNBG_ROOT}/classroom/result/evaluations`
+   - The SSIM errormaps and relative-MSE errormaps are saved in `${MCDNBG_ROOT}/classroom/result/evaluations`
 
-### Running the code
-1. Evaluate on the 1-spp BMFR dataset.
-  TODO
+### Retrain Your Own Model
+Run "python network_train.py"
 
-2. Evaluate on the 64-spp BMFR dataset.
-  TODO
+### Comparison with Multi-Resolution Kernel Prediction Denoiser (MR-KP)
+Please visit [our implementation of MR-KP](https://github.com/xmeng525/MultiResolutionKernelPredictionCNN) for more information.
