@@ -9,7 +9,7 @@ Open source of our EGSR 2020 paper "Real-time Monte Carlo Denoising with the Neu
 
 [**Online Result Viewer**](https://sites.google.com/view/bilateral-grid-denoising/onlineresultviewer)
 
-[**Supplementary Material**](https://drive.google.com/file/d/1ck65mW_SJvdrwohiWKFbWUhhgZjHei5k/view?usp=sharing)
+[**Supplementary Material & Dataset**](https://sites.google.com/view/bilateral-grid-denoising/home/supplemental-material-dataset)
 
 [**Supplementary Video**](https://youtu.be/9PVR1-GTt6g)
 
