@@ -20,15 +20,19 @@ Real-time denoising for Monte Carlo rendering remains a critical challenge with 
 
 ### Citation
 If you find our work useful in your research, please consider citing:
-
-  @inproceedings {Meng2020Real,
-  booktitle = {Eurographics Symposium on Rendering 2020},
-  title = {{Real-time Monte Carlo Denoising with the Neural Bilateral Grid}},
-  author = {Xiaoxu Meng, Quan Zheng, Amitabh Varshney, Gurprit Singh, Matthias Zwicker},
-  year = {2020},
-  publisher = {The Eurographics Association},
+```
+  @inproceedings {.20201133,
+    booktitle = {Eurographics Symposium on Rendering - DL-only Track},
+    editor = {Dachsbacher, Carsten and Pharr, Matt},
+    title = {{Real-time Monte Carlo Denoising with the Neural Bilateral Grid}},
+    author = {Meng, Xiaoxu and Zheng, Quan and Varshney, Amitabh and Singh, Gurprit and Zwicker, Matthias},
+    year = {2020},
+    publisher = {The Eurographics Association},
+    ISSN = {1727-3463},
+    ISBN = {978-3-03868-117-5},
+    DOI = {10.2312/sr.20201133}
   }
-
+```
 ### Prerequisite Installation
 * Python3
 * TensorFlow 1.13.1
