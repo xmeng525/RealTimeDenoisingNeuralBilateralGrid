@@ -44,7 +44,7 @@ If you find our work useful in your research, please consider citing:
 1. Clone this repo, and we'll call the directory `${MCDNBG_ROOT}`.
 2. Download pre-trained models ["classroom"](https://www.dropbox.com/sh/8o7yijfc6rvba16/AADVi0wNoLrRbSgPBIvgcftsa?dl=0) and put the pretrained model to `${MCDNBG_ROOT}/classroom/model`.
 3. Download the [1-spp dataset (19GB)](https://etsin.fairdata.fi/dataset/0ab24b68-4658-4259-9f1d-3150be898c63/data) or the [packed testdata for scene "classroom" (1.4GB)](https://www.dropbox.com/s/i8lqh6ezzeymwr9/bw_data_128x128_1scenes_60ips_50ppi_test.tfrecords?dl=0).
-If you are using 
+If you are using [1-spp dataset (19GB)](https://etsin.fairdata.fi/dataset/0ab24b68-4658-4259-9f1d-3150be898c63/data), please download the temporal accumulated dataset from [HERE](https://www.dropbox.com/sh/qrf9mwofvy8ikan/AACMvXs_7W2nEk5LpiT1TSHca?dl=0).
 4. Recompile the bilateral kernels by running
 ```
 cd bilateral_kernels
