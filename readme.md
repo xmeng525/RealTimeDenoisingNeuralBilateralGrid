@@ -3,12 +3,12 @@ Open source of our EGSR 2020 paper "Real-time Monte Carlo Denoising with the Neu
 
 ![prediction example](TeaserImages_1280x640.png)
 
-[**Paper**](http://users.umiacs.umd.edu/~xmeng525/Real_time_Monte_Carlo_Denoising_with_the_Neural_Bilateral_Grid_EGSR_prepress.pdf)
+[**Paper**](https://xiaoxumeng.com/Documents/Meng_EGSR_2020/Real_time_Monte_Carlo_Denoising_with_the_Neural_Bilateral_Grid_EGSR_prepress.pdf)
 
 [**Website**](https://sites.google.com/view/bilateral-grid-denoising)
 
-[**Online Result Viewer (1-spp)**](http://users.umiacs.umd.edu/~xmeng525/DataPackage-EGSR1036/1spp_BMFR_dataset/)
-[**Online Result Viewer (64-spp)**](http://users.umiacs.umd.edu/~xmeng525/DataPackage-EGSR1036/64spp_Tungsten_dataset/)
+[**Online Result Viewer (1-spp)**](https://xiaoxumeng.com/Documents/Meng_EGSR_2020/1spp_BMFR_dataset/index.html)
+[**Online Result Viewer (64-spp)**](https://xiaoxumeng.com/Documents/Meng_EGSR_2020/64spp_Tungsten_dataset/index.html)
 
 [**Supplementary Material & Dataset**](https://sites.google.com/view/bilateral-grid-denoising/home/supplemental-material-dataset)
 
