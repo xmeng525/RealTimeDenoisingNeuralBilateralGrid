@@ -36,7 +36,7 @@ If you find our work useful in your research, please consider citing:
 ```
 ### Prerequisite Installation
 * Python3
-* TensorFlow 1.13.1
+* TensorFlow 1.13.1 + CUDA 10.0
 * Pillow 6.1.0 (or newer)
 * scikit-image 0.16.1 (or newer)
 * OpenEXR 1.3.2 (or newer)
