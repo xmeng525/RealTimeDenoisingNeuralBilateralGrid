@@ -35,8 +35,9 @@ If you find our work useful in your research, please consider citing:
   }
 ```
 ### Prerequisite Installation
-* Python3
-* TensorFlow 1.13.1 + CUDA 10.0
+(Tested on Ubuntu 16.04 & Ubuntu 18.04)
+* Python 3.6
+* tensorflow-gpu 1.13.1 + CUDA 10.0
 * Pillow 6.1.0 (or newer)
 * scikit-image 0.16.1 (or newer)
 * OpenEXR 1.3.2 (or newer)
@@ -59,7 +60,7 @@ python network_test.py
    - Input
      - If you use the [1-spp dataset (19GB)](https://etsin.fairdata.fi/dataset/0ab24b68-4658-4259-9f1d-3150be898c63/data), please change the data-path in the argument list:
      ```
-     python network_test.py -d ${your-data-path}
+     python network_test.py -r ${your-data-path}
      ```
      - if you use the [packed testdata for scene "classroom" (1.4GB)](https://www.dropbox.com/s/i8lqh6ezzeymwr9/bw_data_128x128_1scenes_60ips_50ppi_test.tfrecords?dl=0), please put the tfrecords file in `${MCDNBG_ROOT}`.
    - There are a few options in the arguments:
